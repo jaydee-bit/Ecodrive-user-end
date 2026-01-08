@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoDrive - OTP Verification</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .font-audiowide {
+        font-family: "Audiowide", cursive;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen overflow-x-hidden bg-white">
+    <div class="flex flex-col min-h-screen lg:flex-row">
+      <!-- Left Section -->
+      <div
+        class="relative flex-col items-center justify-center hidden p-12 overflow-hidden text-white lg:flex lg:w-1/2 bg-gradient-to-br from-blue-600 to-blue-700"
+      >
+        <div
+          class="absolute w-20 h-20 border-2 rounded-full top-10 left-10 border-white/20"
+        ></div>
+        <div
+          class="absolute w-16 h-16 border-2 rounded-full top-20 right-20 border-yellow-400/30"
+        ></div>
+        <div
+          class="absolute w-12 h-12 rounded-full bottom-20 left-20 bg-yellow-400/20"
+        ></div>
+        <div
+          class="absolute w-8 h-8 rounded-full bottom-40 right-32 bg-white/10"
+        ></div>
+
+        <div class="z-10 max-w-lg text-center">
+          <img
+            src="dist/images/logo.png"
+            alt="EcoDrive Logo"
+            class="mx-auto mb-8 xl:w-5xl"
+          />
+          <h1 class="mb-6 font-bold xl:text-5xl lg:text-3xl">
+            OTP Verification
+          </h1>
+          <p class="text-xl opacity-90">
+            Enter the 6-digit code sent to your phone number.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="flex flex-col w-full lg:w-1/2">
+        <!-- Mobile Header -->
+        <div
+          class="flex flex-col items-center justify-center text-center text-white bg-gradient-to-br from-blue-600 to-blue-700 lg:hidden h-28"
+        >
+          <img src="dist/images/logo.png" class="mb-2 w-65" />
+        </div>
+
+        <div class="mt-4 font-bold text-center text-black lg:hidden">
+          <h1 class="mb-2 text-2xl">OTP Verification</h1>
+          <p class="opacity-80 text-md">Verify your phone number</p>
+        </div>
+
+        <!-- Main content -->
+        <div
+          class="flex items-center justify-center flex-1 p-8 bg-white lg:p-12 lg:bg-gray-50"
+        >
+          <div class="w-full max-w-md animate-fadeIn">
+            <!-- Back button (desktop only) -->
+            <button
+              onclick="history.back()"
+              class="hidden mb-8 text-xl text-gray-600 lg:flex hover:text-gray-900"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+              Go back
+            </button>
+
+            <!-- Desktop title -->
+            <div class="hidden mb-8 lg:block">
+              <h2 class="mb-2 text-3xl font-bold text-gray-900">
+                OTP Verification
+              </h2>
+              <p class="text-gray-600">
+                Enter the 6-digit code sent to
+                <span class="font-semibold">+63 ••• ••• ••</span>
+              </p>
+            </div>
+
+            <!-- Mobile subtitle -->
+            <div class="mb-6 text-center lg:hidden">
+              <p class="text-sm text-gray-600">
+                Enter the 6-digit code sent to
+                <span class="font-semibold">+63 ••• ••• ••</span>
+              </p>
+            </div>
+
+            <!-- OTP Form -->
+            <form id="otpForm" onsubmit="submitOTP(event)">
+              <!-- OTP Inputs -->
+              <div class="flex justify-center gap-2 sm:gap-3">
+                <input
+                  id="otp1"
+                  maxlength="1"
+                  type="text"
+                  class="w-10 h-10 text-xl font-semibold text-center text-gray-900 transition-all bg-white border-2 border-gray-300 sm:w-14 sm:h-14 otp rounded-xl focus:outline-none focus:border-blue-600"
+                />
+                <input
+                  id="otp2"
+                  maxlength="1"
+                  type="text"
+                  class="w-10 h-10 text-xl font-semibold text-center text-gray-900 transition-all bg-white border-2 border-gray-300 sm:w-14 sm:h-14 otp rounded-xl focus:outline-none focus:border-blue-600"
+                />
+                <input
+                  id="otp3"
+                  maxlength="1"
+                  type="text"
+                  class="w-10 h-10 text-xl font-semibold text-center text-gray-900 transition-all bg-white border-2 border-gray-300 sm:w-14 sm:h-14 otp rounded-xl focus:outline-none focus:border-blue-600"
+                />
+                <input
+                  id="otp4"
+                  maxlength="1"
+                  type="text"
+                  class="w-10 h-10 text-xl font-semibold text-center text-gray-900 transition-all bg-white border-2 border-gray-300 sm:w-14 sm:h-14 otp rounded-xl focus:outline-none focus:border-blue-600"
+                />
+                <input
+                  id="otp5"
+                  maxlength="1"
+                  type="text"
+                  class="w-10 h-10 text-xl font-semibold text-center text-gray-900 transition-all bg-white border-2 border-gray-300 sm:w-14 sm:h-14 otp rounded-xl focus:outline-none focus:border-blue-600"
+                />
+                <input
+                  id="otp6"
+                  maxlength="1"
+                  type="text"
+                  class="w-10 h-10 text-xl font-semibold text-center text-gray-900 transition-all bg-white border-2 border-gray-300 sm:w-14 sm:h-14 otp rounded-xl focus:outline-none focus:border-blue-600"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="w-full mt-8 py-3.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 shadow-md hover:shadow-lg transition-all"
+                onclick="setTimeout(() => {location.href = 'resetpass.html'; }, 2000 ); return false;"
+              >
+                Verify OTP
+              </button>
+
+              <p
+                id="otpMessage"
+                class="hidden mt-4 font-medium text-center"
+              ></p>
+            </form>
+
+            <div class="mt-8 text-center text-gray-600">
+              <p class="text-sm">Didn't receive the code?</p>
+              <button
+                onclick="resendOTP()"
+                class="mt-2 font-semibold text-blue-600 hover:underline"
+              >
+                Resend OTP
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      const inputs = document.querySelectorAll(".otp");
+
+      // Auto move to next input
+      inputs.forEach((input, index) => {
+        input.addEventListener("input", () => {
+          input.value = input.value.replace(/\D/g, ""); // allow numbers only
+
+          if (input.value && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+          }
+        });
+
+        // Move back on Backspace
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Backspace" && !input.value && index > 0) {
+            inputs[index - 1].focus();
+          }
+        });
+      });
+
+      function submitOTP(event) {
+        event.preventDefault();
+
+        let code = "";
+        inputs.forEach((i) => (code += i.value));
+
+        if (code.length < 6) {
+          showMessage("Please enter the full 6-digit code.", "error");
+          return;
+        }
+
+        const storedOTP = localStorage.getItem("tempOTP");
+
+        if (code !== storedOTP) {
+          showMessage("Invalid OTP. Please try again.", "error");
+          return;
+        }
+
+        showMessage("OTP verified successfully!", "success");
+
+        setTimeout(() => {
+          // Redirect to new password page
+          window.location.href = "newpassword.html";
+        }, 1500);
+      }
+
+      function resendOTP() {
+        const otp = Math.floor(100000 + Math.random() * 900000);
+        localStorage.setItem("tempOTP", otp);
+        console.log("New OTP for testing:", otp);
+
+        showMessage("OTP resent successfully!", "success");
+      }
+
+      function showMessage(text, type) {
+        const message = document.getElementById("otpMessage");
+        message.textContent = text;
+        message.classList.remove("hidden", "text-red-600", "text-green-600");
+        message.classList.add(
+          type === "error" ? "text-red-600" : "text-green-600"
+        );
+      }
+
+      // Auto focus first input on load
+      window.addEventListener("load", () => {
+        inputs[0].focus();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="./dist/output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/414b0df42d.js"
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    .font-audiowide {
+      font-family: "Audiowide", cursive;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen overflow-x-hidden bg-gray-50">
+  <!-- ===== Fixed Header (overlapping style) ===== -->
+  <header class="relative top-0 left-0 z-50 w-full text-white bg-blue-600 shadow-lg font-audiowide">
+    <div class="flex items-center justify-between px-4 py-3 lg:px-8">
+      <div class="flex items-center space-x-3">
+        <img src="dist/images/logo.png" alt="ECODRIVE" class="w-30" />
+      </div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="text-white cursor-pointer focus:outline-none md:hidden">
+        <i class="text-2xl fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden space-x-8 text-lg font-bold md:flex">
+        <a href="Homepage.html" onclick="setTimeout(() => { location.href='index.html'; }, 2000 ); return false;"  class="text-yellow-300 hover:text-yellow-200">Home</a>
+        <a href="Loans.html" onclick="setTimeout(() => { location.href='Loans.html'; }, 2000 ); return false;"  class="hover:text-yellow-200">Loans</a>
+        <a href="acc.html" onclick="setTimeout(() => { location.href='acc.html'; }, 2000 ); return false;" class="hover:text-yellow-200">Account</a>
+        <a href="#"onclick="setTimeout(() => { location.href='Notification.html'; }, 2000 ); return false;" ><i class="fa-solid fa-bell hover:text-yellow-200"></i></a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav: switched from fixed to absolute, placed below header -->
+    <nav
+      id="mobile-menu"
+      class="flex-col hidden text-sm font-bold text-gray-700 transition-all duration-300 bg-white shadow-md lg:hidden absolute top-full left-0 w-full max-h-[calc(100vh-4rem)] overflow-auto z-50"
+    >
+      <a href="Homepage.html" onclick="setTimeout(() => { location.href='index.html'; }, 2000 ); return false;"  class="w-full px-6 py-3 text-left text-blue-500 border-b border-gray-200 hover:bg-blue-50">Home</a>
+      <a href="Loans.html" onclick="setTimeout(() => { location.href='Loans.html'; }, 2000 ); return false;"  class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50">Loans</a>
+      <a href="acc.html" onclick="setTimeout(() => { location.href='acc.html'; }, 2000 ); return false;"  class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50">Account</a>
+      <a href="#" onclick="setTimeout(() => { location.href='Notification.html'; }, 2000 ); return false;"  class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50">Notifications</a>
+    </nav>
+  </header>
+
+  <!-- ===== Main Content Area (unchanged image position) ===== -->
+  <main class="flex-1 text-black">
+    <div>
+      <img
+        src="dist/images/eco.png"
+        alt=""
+        class="-mt-5 md:-mt-6 lg:-mt-8 w-3xs md:w-xs lg:w-sm"
+      />
+    </div>
+
+    <!-- ===== Features Section ===== -->
+    <section>
+      <h2
+        class="m-8 text-2xl font-bold text-center font-audiowide lg:flex lg xl:text-3xl"
+      >
+        Product Units
+      </h2>
+
+      <div class="grid px-4 mx-auto mb-12 font-bold text-center max-w-7xl xl:mx-15 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+        <!-- Grid layout with responsive column count and gaps between cards -->
+
+        <!-- ===== Carousel Card 1 ===== -->
+        <div class="relative p-4 overflow-hidden bg-white shadow-md rounded-xl ">
+          <!-- Card container with padding, shadow, and rounded corners -->
+          
+          <div id="carousel1" class="flex transition-transform duration-500 ">
+            <!-- Flex container that holds slides; moves horizontally with smooth transition -->
+            
+            <div  class="flex-shrink-0 w-full"> <!--this is where you put onclick function-->
+              <!-- Each slide uses flex-shrink-0 to keep width fixed -->
+               <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/blitzwhite.png" onclick="blitz()"  class="object-cover w-40 mx-auto rounded-md h-30">
+              <!-- Slide image with cover fit and rounded corners -->
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Blitz 1200</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500">₱45,000</p>
+              </div>
+              
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/blitzgray.webp" onclick="blitz()" class="object-cover mx-auto rounded-md w-38 h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Blitz 1200</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱45,000</p>
+              </div>
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/blitzblack.webp" onclick="blitz()" class="object-cover w-40 mx-auto rounded-md h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Blitz 1200</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱45,000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-2 mt-3">
+            <!-- Buttons below the carousel for manual control -->
+            <button onclick="goToSlide(1,0)" class="w-6 h-6 text-sm bg-white border-2 rounded-full "></button>
+            <button onclick="goToSlide(1,1)" class="w-6 h-6 text-sm bg-gray-300 border-2 rounded-full"></button>
+            <button onclick="goToSlide(1,2)" class="w-6 h-6 text-sm bg-black rounded-full "></button>
+          </div>
+        </div>
+
+        <!-- ===== Carousel Card 2 ===== -->
+        <div class="relative p-4 overflow-hidden bg-white shadow-md rounded-xl">
+          <!-- Same structure as first carousel -->
+          <div id="carousel2" class="flex transition-transform duration-500">
+            <!-- Flex container that holds slides; moves horizontally with smooth transition -->
+            
+            <div  class="flex-shrink-0 w-full"> <!--this is where you put onclick function-->
+              <!-- Each slide uses flex-shrink-0 to keep width fixed -->
+               <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/candyred.png" onclick="candy()" class="object-cover w-40 mx-auto rounded-md h-30">
+              <!-- Slide image with cover fit and rounded corners -->
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Candy 800</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱39,000</p>
+              </div>
+              
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/candyskyblue.png"onclick="candy()" class="object-cover mx-auto rounded-md w-38 h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Candy 800</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱39,000</p>
+              </div>
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/candygray.png"onclick="candy()" class="object-cover w-40 mx-auto rounded-md h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Candy 800</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱39,000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-2 mt-3">
+            <!-- Buttons below the carousel for manual control -->
+            <button onclick="goToSlide(2,0)" class="w-6 h-6 text-sm bg-red-500 border-2 rounded-full "></button>
+            <button onclick="goToSlide(2,1)" class="w-6 h-6 text-sm border-2 rounded-full bg-sky-300"></button>
+            <button onclick="goToSlide(2,2)" class="w-6 h-6 text-sm bg-gray-500 border-2 rounded-full "></button>
+          </div>
+        </div>
+
+
+        <!-- ===== Carousel Card 3 ===== -->
+        <div class="relative p-4 overflow-hidden bg-white shadow-md rounded-xl">
+          <!-- Same structure as first carousel -->
+          <div id="carousel3" class="flex transition-transform duration-500">
+            <!-- Flex container that holds slides; moves horizontally with smooth transition -->
+            
+            <div  class="flex-shrink-0 w-full"> <!--this is where you put onclick function-->
+              <!-- Each slide uses flex-shrink-0 to keep width fixed -->
+               <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/fun350red.png" onclick="fun()" class="object-cover mx-auto rounded-md h-30 w-41">
+              <!-- Slide image with cover fit and rounded corners -->
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Fun 350R II</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱24,000</p>
+              </div>
+              
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/fun350gray.png"onclick="fun()" class="object-cover mx-auto rounded-md h-30 w-41">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Fun 350R II</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱24,000</p>
+              </div>
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/fun350black.png"onclick="fun()" class="object-cover mx-auto rounded-md h-30 w-41">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Fun 350R II</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱24,000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-2 mt-3">
+            <!-- Buttons below the carousel for manual control -->
+            <button onclick="goToSlide(3,0)" class="w-6 h-6 text-sm bg-red-500 border-2 rounded-full "></button>
+            <button onclick="goToSlide(3,1)" class="w-6 h-6 text-sm bg-gray-400 border-2 rounded-full"></button>
+            <button onclick="goToSlide(3,2)" class="w-6 h-6 text-sm bg-black rounded-full "></button>
+          </div>
+        </div>
+
+
+        <!-- ===== Carousel Card 4 ===== -->
+        <div class="relative p-4 overflow-hidden bg-white shadow-md rounded-xl">
+          <!-- Same structure as first carousel -->
+          <div id="carousel4" class="flex transition-transform duration-500 ">
+            <!-- Flex container that holds slides; moves horizontally with smooth transition -->
+            
+            <div  class="flex-shrink-0 w-full"> <!--this is where you put onclick function-->
+              <!-- Each slide uses flex-shrink-0 to keep width fixed -->
+               <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/econored.png" onclick="econo()" class="object-cover w-40 mx-auto rounded-md h-30">
+              <!-- Slide image with cover fit and rounded corners -->
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Econo 800MP</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱60,000</p>
+              </div>
+              
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/econogreen.png"onclick="econo()" class="object-cover mx-auto rounded-md w-38 h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Econo 800MP</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱60,000</p>
+              </div>
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/econobrown.png"onclick="econo()" class="object-cover w-40 mx-auto rounded-md h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Econo 800MP</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱60,000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-2 mt-3">
+            <!-- Buttons below the carousel for manual control -->
+            <button onclick="goToSlide(4,0)" class="w-6 h-6 text-sm bg-red-600 border-2 rounded-full "></button>
+            <button onclick="goToSlide(4,1)" class="w-6 h-6 text-sm bg-teal-500 border-2 rounded-full"></button>
+            <button onclick="goToSlide(4,2)" class="w-6 h-6 text-sm bg-yellow-800 border-2 rounded-full "></button>
+          </div>
+        </div>
+
+
+        <!-- ===== Carousel Card 5 ===== -->
+        <div class="relative p-4 overflow-hidden bg-white shadow-md rounded-xl">
+          <!-- Same structure as first carousel -->
+          <div id="carousel5" class="flex transition-transform duration-500 ">
+            <!-- Flex container that holds slides; moves horizontally with smooth transition -->
+            
+            <div  class="flex-shrink-0 w-full"> <!--this is where you put onclick function-->
+              <!-- Each slide uses flex-shrink-0 to keep width fixed -->
+               <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/ecargored.png" onclick="ecargo()"  class="object-cover w-40 mx-auto rounded-md h-30">
+              <!-- Slide image with cover fit and rounded corners -->
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">E-cargo 800J</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱65,000</p>
+              </div>
+              
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/ecargoskyblue.png" onclick="ecargo()" class="object-cover mx-auto rounded-md h-30 w-41">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">E-cargo 800J</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱65,000</p>
+              </div>
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/ecargoblue.png" onclick="ecargo()" class="object-cover mx-auto rounded-md h-30 w-41">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">E-cargo 800J</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱65,000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-2 mt-3">
+            <!-- Buttons below the carousel for manual control -->
+            <button onclick="goToSlide(5,0)" class="w-6 h-6 text-sm bg-red-600 border-2 rounded-full "></button>
+            <button onclick="goToSlide(5,1)" class="w-6 h-6 text-sm border-2 rounded-full bg-sky-500"></button>
+            <button onclick="goToSlide(5,2)" class="w-6 h-6 text-sm bg-blue-600 border-2 rounded-full "></button>
+          </div>
+        </div>
+
+
+        <!-- ===== Carousel Card 6 ===== -->
+        <div class="relative p-4 overflow-hidden bg-white shadow-md rounded-xl">
+          <!-- Same structure as first carousel -->
+          <div id="carousel6" class="flex transition-transform duration-500 ">
+            <!-- Flex container that holds slides; moves horizontally with smooth transition -->
+            
+            <div  class="flex-shrink-0 w-full"> <!--this is where you put onclick function-->
+              <!-- Each slide uses flex-shrink-0 to keep width fixed -->
+               <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/econo2slate.png" onclick="econoII()" class="object-cover w-40 mx-auto rounded-md h-31">
+              <!-- Slide image with cover fit and rounded corners -->
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Econo 800MPII</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱63,500</p>
+              </div>
+              
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/eco2beige.jpg"onclick="econoII()" class="object-cover mx-auto rounded-md w-38 h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Econo 800MPII</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱63,500</p>
+              </div>
+            </div>
+
+            <div class="flex-shrink-0 w-full">
+              <h1 class="text-2xl text-blue-500 font-audiowide ">ECODRIVE</h1>
+              <img src="dist/images/eco2black.jpg"onclick="econoII()" class="object-cover w-40 mx-auto rounded-md h-30">
+              <div class="flex justify-center gap-6 mt-5 font-bold text-md">
+                <p class="tracking-wide font-audiowide">Econo 800MPII</p>
+                <p class="-mt-1 text-lg tracking-wide text-green-500 ">₱63,500</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-2 mt-3">
+            <!-- Buttons below the carousel for manual control -->
+            <button onclick="goToSlide(6,0)" class="w-6 h-6 text-sm border-2 rounded-full bg-slate-300 "></button>
+            <button onclick="goToSlide(6,1)" class="w-6 h-6 text-sm border-2 rounded-full bg-amber-100"></button>
+            <button onclick="goToSlide(6,2)" class="w-6 h-6 text-sm bg-black border-2 rounded-full "></button>
+          </div>
+        </div>
+
+
+        <!-- You can duplicate and change IDs for more carousels -->
+      </div>
+    </section>
+  </main>
+
+   <!-- Footer -->
+    <footer class="py-6 mt-10 text-gray-300 bg-gray-900">
+      <div class="flex flex-col items-center justify-between px-6 mx-auto max-w-7xl md:flex-row">
+        <!-- Left -->
+        <div class="mb-4 text-sm md:mb-0">
+          <span class="font-semibold text-white">Ecodrive</span> © 2025. All rights reserved.
+        </div>
+
+        <!-- Center -->
+        <div class="flex space-x-6 text-xs">
+          <a href="#" class="transition-colors hover:text-white hover:underline">Terms of Service</a>
+          <a href="#" class="transition-colors hover:underline hover:text-white">Privacy Policy</a>
+          <a href="#" class="transition-colors hover:underline hover:text-white">About</a>
+          <a href="#" class="transition-colors hover:underline hover:text-white">Contact</a>
+          <a href="#" class="transition-colors hover:text-white hover:underline">Help Center</a>
+        </div>
+
+        <!-- Right -->
+        
+      </div>
+    </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    let menuOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle("hidden", !menuOpen);
+      mobileMenu.classList.toggle("flex", menuOpen);
+    });
+  </script>
+
+  <script src="carousel.js"></script>
+</body>
+</html>

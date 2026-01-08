@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loans Page</title>
+  <link rel="stylesheet" href="./dist/output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/414b0df42d.js" crossorigin="anonymous"></script>
+  <style>
+    .font-audiowide { font-family: 'Audiowide', cursive; }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen overflow-x-hidden bg-gray-50">
+
+  <!-- ===== Header Section ===== -->
+  <header class="relative top-0 left-0 z-50 w-full text-white bg-blue-600 shadow-lg font-audiowide">
+    <div class="flex items-center justify-between px-4 py-3 lg:px-8">
+      <div class="flex items-center space-x-3">
+        <img src="dist/images/logo.png" alt="ECODRIVE" class="w-30" />
+      </div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="text-white cursor-pointer focus:outline-none md:hidden">
+        <i class="text-2xl fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden space-x-8 text-lg font-bold md:flex">
+        <a href="Homepage.html" onclick="setTimeout(() => { location.href='Homepage.html'; }, 2000 ); return false;"  class=" hover:text-yellow-200">Home</a>
+        <a href="Loans.html" onclick="setTimeout(() => { location.href='Loans.html'; }, 2000 ); return false;"  class="text-yellow-300 hover:text-yellow-200">Loans</a>
+        <a href="acc.html" onclick="setTimeout(() => { location.href='acc.html'; }, 2000 ); return false;"  class="hover:text-yellow-200">Account</a>
+        <a href="#" onclick="setTimeout(() => { location.href='Notification.html'; }, 2000 ); return false;" ><i class="fa-solid fa-bell hover:text-yellow-200"></i></a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav
+      id="mobile-menu"
+      class="flex-col hidden text-sm font-bold text-gray-700 transition-all duration-300 bg-white shadow-md lg:hidden absolute top-full left-0 w-full max-h-[calc(100vh-4rem)] overflow-auto z-50"
+    >
+      <a href="Homepage.html" onclick="setTimeout(() => { location.href='Homepage.html'; }, 2000 ); return false;"  class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50">Home</a>
+      <a href="Loans.html" class="w-full px-6 py-3 text-left text-blue-500 border-b border-gray-200 hover:bg-blue-50">Loans</a>
+      <a href="acc.html" onclick="setTimeout(() => { location.href='acc.html'; }, 2000 ); return false;"  class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50">Account</a>
+      <a href="#" onclick="setTimeout(() => { location.href='Notification.html'; }, 2000 ); return false;"  class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50">Notifications</a>
+    </nav>
+  </header>
+
+  <!-- ===== Sub Navigation ===== -->
+  <nav class="flex justify-between mx-5 mt-2 font-medium text-black md:mx-20">
+    <a class="pb-2 text-blue-600 border-b-3 hover:text-blue-600 hover:border-b-3" href="Loans.html" onclick="setTimeout(() => {window.location.href='Loans.html';} ,2000); return false;">Schedule</a>
+    <a class="pb-2 hover:text-blue-600 hover:border-b-3" href="" onclick="setTimeout(() => {window.location.href='Transaction.html';} ,2000); return false;">Transactions</a>
+    <a class="pb-2 hover:text-blue-600 hover:border-b-3" href="" onclick="setTimeout(() => {window.location.href='Document.html';} ,2000); return false;">Documents</a>
+  </nav>
+  <hr class="text-gray-400">
+
+  <!-- ===== Main Content ===== -->
+  <main class="flex-grow">
+    <h2 class="mt-5 text-lg font-bold text-gray-700 xl:ml-25 ml-7 lg:ml-14 xl:text-3xl">My Loan</h2>
+
+    <div class="grid max-w-4xl gap-8 px-6 mx-auto mt-6 sm:grid-cols-2">
+      <!-- Card 1 -->
+      <div class="p-4 bg-white border-gray-300 rounded-lg lg:w-sm drop-shadow-lg drop-shadow-gray-400">
+        <h3 class="flex justify-between mt-2 mb-2 text-blue-500 font-audiowide">ECODRIVE 
+          <span class="font-sans font-bold text-black ">09912345678</span>
+        </h3>
+        <hr class="mb-2 text-gray-400" />
+        <div class="grid grid-cols-2 text-sm">
+          <img class="w-24 mt-1 ml-6" src="dist/images/BLITZ-1200-WHITE-2.png" alt="">
+          <h3 class="mt-6 ml-3 font-bold text-black">Blitz 1200</h3>
+          <h3 class="ml-2 font-semibold text-gray-600">Order value</h3>
+          <h3 class="mr-2 font-bold tracking-widest text-right text-black">₱45,000</h3>
+          <h3 class="ml-2 font-semibold text-gray-600 whitespace-nowrap">Amount to close loan</h3>
+          <h3 class="mr-2 font-bold tracking-widest text-right text-black">₱45,000</h3>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="p-4 text-sm font-semibold text-gray-600 bg-white border-gray-300 rounded-lg sm:h-35 lg:w-sm drop-shadow-lg drop-shadow-gray-400 md:h-35">
+        <h3>Confirmed by Ecodrive Baliwag</h3>
+        <h3 class="mt-2">Nov 7, 2025 at 4:11 PM</h3>
+        <button class="px-5 py-1 mt-5 bg-blue-100 hover:bg-blue-200 rounded-2xl">View Details ></button>
+      </div>
+    </div>
+    
+    <!-- Schedule Section -->
+    <div class="h-full max-w-xl p-4 mt-5 mb-50 sm:mx-auto">
+      <h2 class="mb-2 text-lg font-bold text-gray-700">Schedule</h2>
+      <progress class="w-full text-blue-500 progress" value="6.66" max="100"></progress>
+      <div class="flex justify-between mt-2">
+        <h2 class="font-semibold text-gray-600">Paid:</h2>
+        <h2 class="font-semibold text-gray-600">1/15</h2>
+      </div>
+
+      <!-- Example loan rows shortened -->
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Nov 10, 2025 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">✓</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Dec 10, 2025 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Jan 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Feb 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Mar 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Apr 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">May 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Jun 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Jul 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Aug 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Sep 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Oct 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Nov 10, 2026 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Dec 10, 2026
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      <div class="w-full p-3 mt-5 text-sm text-gray-700 bg-white rounded-lg drop-shadow-md">
+        <h3 class="flex justify-between font-semibold">Jan 10, 2027 
+          <span class="font-bold tracking-widest text-black ">₱3,000</span> 
+          <span class="mr-2 font-bold text-black current_status">-</span>
+        </h3>
+      </div>
+      
+
+      <!-- Pay Now button -->
+      <button id="openPopup" class="w-full py-3 mx-auto mt-10 font-bold text-center text-white bg-blue-600 hover:bg-blue-500 rounded-xl">
+        Pay Now
+      </button>
+    </div>
+  </main>
+  
+  <!-- ===== Bottom Sheet Popup ===== -->
+  <div id="backdrop" class="fixed inset-0 z-40 hidden bg-black/40"></div>
+
+  <div id="popup"
+    class="fixed bottom-0 left-0 right-0 z-50 transition-all duration-300 ease-out transform translate-y-full">
+    <div class="max-w-md mx-auto">
+      <div class="p-4 bg-white shadow-2xl rounded-t-2xl">
+
+        <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-4"></div>
+
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-lg font-semibold text-gray-800">Payment method</h3>
+          <button id="closePopup" class="p-2 text-gray-500 rounded hover:text-gray-700">✕</button>
+        </div>
+
+        <p class="mb-4 text-sm font-semibold text-blue-500">Your security and privacy are protected</p>
+
+        <div class="space-y-3">
+          <label class="flex items-center justify-between p-2 border border-gray-300 rounded-lg cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+            <div class="flex items-center gap-3">
+              <div class="flex items-center justify-center font-semibold text-blue-600 rounded w-9 h-9 bg-blue-50">
+                <img src="dist/images/gcash.png" alt="">
+              </div>
+              <div>
+                <div class="text-sm font-medium">GCash</div>
+                <div class="mb-6 text-xs font-semibold text-gray-500">Pay directly via Gcash.</div>
+              </div>
+            </div>
+            <input type="radio" name="pay" class="w-10 form-radio">
+          </label>
+
+          <label class="flex items-center justify-between p-2 border border-gray-300 rounded-lg cursor-pointer has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+            <div class="flex items-center gap-3">
+              <div class="flex items-center justify-center font-semibold text-green-600 rounded w-9 h-9 bg-green-50">
+                <img src="dist/images/maya.png" alt="">
+              </div>
+              <div>
+                <div class="text-sm font-medium">Maya</div>
+                <div class="mb-6 text-xs font-semibold text-gray-500">Pay directly via Maya</div>
+              </div>
+            </div>
+            <input type="radio" name="pay" class="w-10 form-radio">
+          </label>
+      </div>
+
+        <div class="px-1 mt-5">
+          <button id="continueBtn" class="w-full py-3 font-medium text-white bg-blue-600 shadow rounded-2xl hover:bg-blue-500">
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="py-6 mt-auto text-gray-300 bg-gray-900">
+    <div class="flex flex-col items-center justify-between px-6 mx-auto max-w-7xl md:flex-row">
+      <div class="mb-4 text-sm md:mb-0">
+        <span class="font-semibold text-white">Ecodrive</span> © 2025. All rights reserved.
+      </div>
+
+      <div class="flex space-x-6 text-xs">
+        <a href="#" class="transition-colors hover:text-white hover:underline">Terms of Service</a>
+        <a href="#" class="transition-colors hover:text-white hover:underline">Privacy Policy</a>
+        <a href="#" class="transition-colors hover:text-white hover:underline">About</a>
+        <a href="#" class="transition-colors hover:text-white hover:underline">Contact</a>
+        <a href="#" class="transition-colors hover:text-white hover:underline">Help Center</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Script ===== -->
+  <script>
+    // Menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    let menuOpen = false;
+    menuBtn.addEventListener("click", () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle("hidden", !menuOpen);
+      mobileMenu.classList.toggle("flex", menuOpen);
+    });
+
+    // Bottom popup script
+    const openBtn = document.getElementById('openPopup');
+    const closeBtn = document.getElementById('closePopup');
+    const popup = document.getElementById('popup');
+    const backdrop = document.getElementById('backdrop');
+    const continueBtn = document.getElementById('continueBtn');
+
+    openBtn.addEventListener('click', () => {
+      popup.classList.remove('translate-y-full');
+      backdrop.classList.remove('hidden');
+    });
+
+    const closePopup = () => {
+      popup.classList.add('translate-y-full');
+      backdrop.classList.add('hidden');
+    };
+
+    closeBtn.addEventListener('click', closePopup);
+    backdrop.addEventListener('click', closePopup);
+    continueBtn.addEventListener('click', () => {
+      alert('Continue clicked — integrate payment logic here');
+      closePopup();
+    });
+  </script>
+</body>
+</html>

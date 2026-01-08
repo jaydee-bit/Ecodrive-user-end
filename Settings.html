@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/414b0df42d.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .font-audiowide {
+        font-family: "Audiowide", cursive;
+      }
+    </style>
+  </head>
+
+  <body class="flex flex-col min-h-screen overflow-x-hidden bg-white">
+    <!-- ===== Fixed Header (overlapping style) ===== -->
+    <header
+      class="fixed top-0 left-0 z-50 w-full text-white bg-blue-600 shadow-lg font-audiowide"
+    >
+      <div class="flex items-center justify-between px-4 py-3 lg:px-8">
+        <div class="flex items-center space-x-3">
+          <img src="dist/images/logo.png" alt="ECODRIVE" class="w-30" />
+        </div>
+
+        <!-- Hamburger Button -->
+        <button
+          id="menu-btn"
+          class="text-white cursor-pointer focus:outline-none md:hidden"
+        >
+          <i class="text-2xl fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden space-x-8 text-lg font-bold md:flex">
+          <a
+            href="Homepage.html"
+            onclick="setTimeout(() => { location.href='Homepage.html'; }, 2000 ); return false;"
+            class="hover:text-yellow-200"
+            >Home</a
+          >
+          <a
+            href="Loans.html"
+            onclick="setTimeout(() => { location.href='Loans.html'; }, 2000 ); return false;"
+            class="hover:text-yellow-200"
+            >Loans</a
+          >
+          <a
+            href="acc.html"
+            onclick="setTimeout(() => { location.href='acc.html'; }, 2000 ); return false;"
+            class="text-yellow-300 hover:text-yellow-200"
+            >Account</a
+          >
+          <a href="#"><i class="fa-solid fa-bell hover:text-yellow-200"></i></a>
+        </nav>
+      </div>
+
+      <!-- Mobile Nav -->
+      <nav
+        id="mobile-menu"
+        class="flex-col hidden text-sm font-bold text-gray-700 transition-all duration-300 bg-white shadow-md lg:hidden"
+      >
+        <a
+          href="Homepage.html"
+          onclick="setTimeout(() => { location.href='Homepage.html'; }, 2000 ); return false;"
+          class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50"
+          >Home</a
+        >
+        <a
+          href="Loans.html"
+          onclick="setTimeout(() => { location.href='Loans.html'; }, 2000 ); return false;"
+          class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50"
+          >Loans</a
+        >
+        <a
+          href="acc.html"
+          onclick="setTimeout(() => { location.href='acc.html'; }, 2000 ); return false;"
+          class="w-full px-6 py-3 text-left text-blue-500 border-b border-gray-200 hover:bg-blue-50"
+          >Account</a
+        >
+        <a
+          href="#"
+          class="w-full px-6 py-3 text-left border-b border-gray-200 hover:bg-blue-50"
+          >Notifications</a
+        >
+      </nav>
+    </header>
+
+    <main class="pb-150 mt-28">
+      <h1 class="mb-5 ml-5 -mt-10 text-xl font-semibold text-gray-600">
+        Settings
+      </h1>
+      <!-- Settings Placeholders-->
+      <div
+        class="flex items-start w-full gap-3 p-2 font-semibold text-gray-800 bg-white border-t border-gray-300 cursor-pointer h-15 hover:bg-gray-100"
+        onclick="setTimeout(() => { location.href='changepass.html'; }, 2000 ); return false;"
+      >
+        <i class="mt-1 ml-2 fa-solid fa-lock fa-2x"></i>
+        <h1 class="mt-2 ml-2">Change Password</h1>
+      </div>
+      <div
+        class="flex items-start w-full gap-3 p-2 font-semibold text-gray-800 bg-white border-gray-300 cursor-pointer border-y h-15 hover:bg-gray-100"
+        onclick="setTimeout(() => { location.href='privacy.html'; }, 2000 ); return false;"
+      >
+        <i class="mt-1 ml-2 fa-solid fa-shield fa-2x"></i>
+        <h1 class="mt-2 ml-2">Privacy Settings</h1>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 mt-10 text-gray-300 bg-gray-900">
+      <div
+        class="flex flex-col items-center justify-between px-6 mx-auto max-w-7xl md:flex-row"
+      >
+        <!-- Left -->
+        <div class="mb-4 text-sm md:mb-0">
+          <span class="font-semibold text-white">Ecodrive</span> © 2025. All
+          rights reserved.
+        </div>
+
+        <!-- Center -->
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="transition-colors hover:text-white hover:underline"
+            >Terms of Service</a
+          >
+          <a href="#" class="transition-colors hover:underline hover:text-white"
+            >Privacy Policy</a
+          >
+          <a href="#" class="transition-colors hover:underline hover:text-white"
+            >About</a
+          >
+          <a href="#" class="transition-colors hover:underline hover:text-white"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== Scripts ===== -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      let menuOpen = false;
+
+      menuBtn.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle("hidden", !menuOpen);
+        mobileMenu.classList.toggle("flex", menuOpen);
+      });
+    </script>
+  </body>
+</html>
